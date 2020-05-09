@@ -2,7 +2,7 @@ var rule = require('../../../lib/rules/label-has-for');
 var RuleTester = require('eslint').RuleTester;
 
 var tester = new RuleTester({
-  parser: 'vue-eslint-parser',
+  parser: require.resolve('vue-eslint-parser'),
   parserOptions: {
     ecmaVersion: 2015,
     sourceType: 'module',
@@ -31,6 +31,24 @@ tester.run('label-has-for', rule, {
           },
         }`
     },
+    // TODO: Support bound htmlFor
+    // {
+    //   code: `
+    //     export default {
+    //       data() {
+    //         return {
+    //           labelId: "firstName"
+    //         };
+    //       },
+    //       render (h) {
+    //         return (
+    //          <label :htmlFor="'labelId'">
+    //             <input type="text" :id="'labelId'" />First Name
+    //          </label>
+    //         )
+    //       },
+    //     }`
+    // },
     {
       filename: 'test.vue',
       code: '<template><label for="id"></label><input type="text" /></template>',
