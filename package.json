@@ -25,7 +25,7 @@
     "url": "https://github.com/maranran/eslint-plugin-vue-a11y/issues"
   },
   "engines": {
-    "node": ">=4"
+    "node": ">=8"
   },
   "dependencies": {
     "aria-query": "^0.7.1",
