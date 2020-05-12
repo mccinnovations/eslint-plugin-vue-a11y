@@ -1,7 +1,7 @@
 #!/usr/bin/env node --harmony
 const path = require('path');
 const fs = require('fs');
-const argv = require('minimist')(process.argv.slice(2)); // eslint-disable-line import/no-extraneous-dependencies
+const argv = require('minimist')(process.argv.slice(2));
 const ruleTemplateGenerator = require('./template/rule');
 const testTemplateGenerator = require('./template/test');
 const docTemplateGenerator = require('./template/doc');
